@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Крутие Машины</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Главное меню -->
+    <div id="mainMenu" class="screen">
+        <div class="title-container">
+            <h1 class="game-title">КРУТИЕ МАШЫНЫ</h1>
+        </div>
+        
+        <div class="cars-container">
+            <img src="img/dodge.png" alt="Dodge" class="car-left">
+            <img src="img/lamba2.png" alt="Lamborghini" class="car-right">
+        </div>
+        
+        <div class="buttons-container">
+            <button class="btn btn-ussr" onclick="playVideo()">СССР БОЛЬШЕ НЕТ</button>
+            <button class="btn btn-play" onclick="startGame()">ИГРАТЬ</button>
+            <button class="btn btn-music" onclick="enableMusic()" id="musicBtn">🎵 ВКЛЮЧИТЬ МУЗЫКУ</button>
+        </div>
+    </div>
+
+    <!-- Видео экран -->
+    <div id="videoScreen" class="screen hidden">
+        <video id="ussrVideo" controls autoplay>
+            <source src="img/SSSR.MP4" type="video/mp4">
+        </video>
+        <button class="btn btn-back" onclick="backToMenu()">ВЕРНУТЬСЯ В МЕНЮ</button>
+    </div>
+
+    <!-- Игровой экран -->
+    <div id="gameScreen" class="screen hidden">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div class="game-info">
+            <div class="score">Очки: <span id="score">0</span></div>
+            <div class="speed">Скорость: <span id="speed">0</span> км/ч</div>
+        </div>
+        
+        <!-- Мобильные кнопки управления -->
+        <div class="mobile-controls">
+            <button class="mobile-btn mobile-left" id="leftBtn">←</button>
+            <button class="mobile-btn mobile-right" id="rightBtn">→</button>
+        </div>
+    </div>
+
+    <!-- Экран окончания игры -->
+    <div id="gameOverScreen" class="screen hidden">
+        <div class="game-over-content">
+            <h2 class="game-over-title">ІПАТ ТИ ЛОХ ПРАЄБАЛ</h2>
+            <div class="final-score">Финальный счет: <span id="finalScore">0</span></div>
+            <div class="game-over-buttons">
+                <button class="btn btn-menu" onclick="backToMenu()">ВЕРНУТЬСЯ В МЕНЮ</button>
+                <button class="btn btn-restart" onclick="startGame()">НАЧАТЬ ЗАНОВО</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Аудио элементы -->
+    <audio id="backgroundMusic" loop>
+        <source src="ogonek.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="explosionSound">
+        <source src="boom.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

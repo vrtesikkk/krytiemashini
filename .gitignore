@@ -1,0 +1,35 @@
+# Системные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Временные файлы
+*.tmp
+*.temp
+*.log
+
+# Node modules (если будешь добавлять)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Сборка (если будешь использовать)
+dist/
+build/
+
+# Большие медиафайлы (добавь их вручную после клонирования)
+ogonek.mp3
+boom.mp3
+img/SSSR.MP4
